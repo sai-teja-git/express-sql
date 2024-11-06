@@ -1,0 +1,29 @@
+{
+  "name": "express-sql",
+  "version": "1.0.0",
+  "description": "Node project with express framework and sql database",
+  "main": "app.js",
+  "scripts": {
+    "test": "npm test",
+    "start": "node app.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sai-teja-git/express-sql.git"
+  },
+  "keywords": [
+    "node",
+    "sql",
+    "express",
+    "js"
+  ],
+  "author": "sai-teja",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sai-teja-git/express-sql/issues"
+  },
+  "homepage": "https://github.com/sai-teja-git/express-sql#readme",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}
