@@ -5,7 +5,12 @@
   "main": "app.js",
   "scripts": {
     "test": "npm test",
-    "start": "node --env-file=.env --watch app.js"
+    "start": "node --env-file=.env --watch app.js",
+    "typeorm": "npx typeorm -d src/config/data-source.js",
+    "migration:create": "npx typeorm -- migration:create -d src/config/data-source.js",
+    "migration:generate": "npx typeorm migration:generate -d src/config/data-source.js -o src/migrations/migration",
+    "migration:run": "npm run typeorm -- migration:run",
+    "migration": "rimraf src/migrations & rmdir src/migrations & npm run typeorm -- migration:generate  -o src/migrations/migration && npm run typeorm -- migration:run"
   },
   "repository": {
     "type": "git",
@@ -27,6 +32,7 @@
   "dependencies": {
     "body-parser": "^1.20.3",
     "express": "^4.21.1",
+    "pg": "^8.13.1",
     "typeorm": "^0.3.20"
   }
 }

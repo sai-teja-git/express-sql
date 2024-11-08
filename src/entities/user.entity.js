@@ -1,26 +1,53 @@
-import { Entity, Column, PrimaryGeneratedColumn, Index } from 'typeorm';
+import { EntitySchema } from 'typeorm';
 
-@Entity()
-export class User {
-    @PrimaryGeneratedColumn()
-    id;
+const user = new EntitySchema({
+    name: "User",
+    tableName: "users",
+    columns: {
+        id: {
+            primary: true,
+            generated: true,
+            type: "int",
+        },
+        username: {
+            type: "varchar",
+            length: 50,
+            unique: true,
+        },
+        name: {
+            type: "varchar",
+            length: 100,
+        },
+        email: {
+            type: "varchar",
+            length: 100,
+            unique: true,
+        },
+        password: {
+            type: "varchar",
+            length: 100,
+        },
+        last_login: {
+            type: "timestamp",
+            nullable: true,
+            default: null
+        },
+        created_at: {
+            type: "timestamp",
+            default: () => "CURRENT_TIMESTAMP",
+        },
+        update_at: {
+            type: "timestamp",
+            default: () => "CURRENT_TIMESTAMP",
+            onUpdate: "CURRENT_TIMESTAMP",
+        },
+    },
+    indexes: [
+        {
+            name: "IDX_USER_NAME",
+            columnNames: ["username"]
+        }
+    ]
+})
 
-    @Index()
-    @Column({ type: "varchar", length: "50", unique: true })
-    username;
-
-    @Column({ type: "varchar", length: 100, nullable: false })
-    name;
-
-    @Column({ type: "varchar", length: 100, nullable: false })
-    password;
-
-    @Column({ type: "datetime", nullable: true })
-    last_login;
-
-    @CreateDateColumn()
-    created_at;
-
-    @UpdateDateColumn()
-    updated_at;
-}
+export default user;

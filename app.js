@@ -1,8 +1,11 @@
-import express from "express";
 import bodyParser from "body-parser";
+import express from "express";
+import dataSource from "./src/config/data-source.js";
 import router from "./src/routes/app.routes.js";
 
 const app = express();
+
+await dataSource.initialize();
 
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
@@ -15,7 +18,7 @@ app.use((req, res, next) => {
 app.use(bodyParser.json({ type: "application/json" }))
 app.use('/', router);
 
-
-app.listen(process.env.PORT, () => {
-    console.log("App Running on port : " + process.env.PORT)
+const port = process.env.PORT ?? 3000;
+app.listen(port, () => {
+    console.log("App Running on port : " + port)
 });
