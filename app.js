@@ -1,11 +1,10 @@
-import bodyParser from "body-parser";
-import express from "express";
-import dataSource from "./src/config/data-source.js";
-import router from "./src/routes/app.routes.js";
+const bodyParser = require("body-parser");
+const express = require("express");
+const dataSource = require("./src/config/data-source.js");
+const router = require("./src/routes/app.routes.js");
 
 const app = express();
-
-await dataSource.initialize();
+dataSource.initialize();
 
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");

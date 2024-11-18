@@ -1,6 +1,6 @@
-import dbConfig from "./db.config.js";
-import { DataSource } from "typeorm";
+const dbConfig = require("./db.config.js");
+const { DataSource } = require("typeorm");
 
 const dataSource = new DataSource(dbConfig);
 
-export default dataSource;
+module.exports = dataSource

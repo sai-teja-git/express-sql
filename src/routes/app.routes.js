@@ -1,6 +1,6 @@
-import express from "express";
-import userRouter from "./user.routes.js";
-import HttpCodes from "../constants/http-codes.js";
+const express = require("express");
+const userRouter = require("./user.routes.js");
+const HttpCodes = require("../constants/http-codes.js");
 
 const router = express.Router();
 
@@ -14,4 +14,4 @@ router.get('/', (req, res) => {
 });
 
 
-export default router
+module.exports = router;

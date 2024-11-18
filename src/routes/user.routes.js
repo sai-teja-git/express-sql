@@ -1,15 +1,12 @@
-import express from "express";
-import HttpCodes from "../constants/http-codes.js";
+const express = require("express");
+const HttpCodes = require("../constants/http-codes.js");
+
+const userService = require("../services/user.service.js")
 
 const userRouter = express.Router();
 
-userRouter.get('/params/:id', (req, res) => {
-    console.log('req.id', req.params.id)
-    res.send({
-        status: 200,
-        user_id: req.params.id,
-        message: "User Here!"
-    })
+userRouter.post('/', (req, res) => {
+    return userService.addUsers(req, res)
 });
 
 userRouter.get('/query', (req, res) => {
@@ -28,4 +25,4 @@ userRouter.get('/', (req, res) => {
     })
 });
 
-export default userRouter
+module.exports = userRouter; 

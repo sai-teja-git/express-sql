@@ -1,34 +1,43 @@
 const { EntitySchema } = require('typeorm');
 
-const user = new EntitySchema({
-    name: "User",
-    tableName: "users",
+const vendor = new EntitySchema({
+    name: "Vendor",
+    tableName: "vendors",
     columns: {
         id: {
+            type: "int",
             primary: true,
             generated: true,
-            type: "int",
         },
-        username: {
+        name: {
             type: "varchar",
             length: 50,
             unique: true,
         },
-        name: {
+        contact_name: {
             type: "varchar",
-            length: 100,
+            length: 50,
+        },
+        address: {
+            type: "varchar",
+            length: 150,
+        },
+        mobile: {
+            type: "varchar",
+            length: 16,
+        },
+        postal_code: {
+            type: "varchar",
+            length: 10,
         },
         email: {
             type: "varchar",
-            length: 100,
+            length: 50,
             unique: true,
         },
-        password: {
+        website: {
             type: "varchar",
-            length: 100,
-        },
-        last_login: {
-            type: "timestamp",
+            length: 50,
             nullable: true,
             default: null
         },
@@ -42,12 +51,6 @@ const user = new EntitySchema({
             onUpdate: "CURRENT_TIMESTAMP",
         },
     },
-    indexes: [
-        {
-            name: "IDX_USER_NAME",
-            columnNames: ["username"]
-        }
-    ]
 })
 
-module.exports = user;
+module.exports = vendor;

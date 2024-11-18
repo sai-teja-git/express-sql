@@ -48,4 +48,4 @@ const HttpCodes = {
     GATEWAY_TIMEOUT: 504,
     HTTP_VERSION_NOT_SUPPORTED: 505
 }
-export default HttpCodes
+module.exports = HttpCodes 
