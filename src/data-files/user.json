@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Test User",
+    "user_name": "test_user",
+    "email": "test.user@mail.com"
+  },
+  {
+    "name": "Mani",
+    "user_name": "mani",
+    "email": "mani@mail.com"
+  },
+  {
+    "name": "Sai Teja",
+    "user_name": "sai_teja",
+    "email": "saiteja@mail.com"
+  },
+  {
+    "name": "Mouli",
+    "user_name": "mouli",
+    "email": "mouli@gmail.com"
+  },
+  {
+    "name": "Ravi",
+    "user_name": "ravi",
+    "email": "ravi@gmail.com"
+  }
+]

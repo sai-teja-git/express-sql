@@ -1,0 +1,236 @@
+[
+  {
+    "name": "Mani Wood Works",
+    "contact_name": "Mani",
+    "address": "HB Coloney, Vizag",
+    "mobile": "+91 9874773212",
+    "postal_code": "1234562",
+    "email": "mani.wood.works@vendors.com",
+    "website": "mani-wood-works.vendors.com"
+  },
+  {
+    "name": "Mani Groceries",
+    "contact_name": "Mani",
+    "address": "HB Coloney, Vizag",
+    "mobile": "+91 9874773213",
+    "postal_code": "1234563",
+    "email": "mani.groceries@vendors.com",
+    "website": "mani-groceries.vendors.com"
+  },
+  {
+    "name": "Mani Kitchen Appliances",
+    "contact_name": "Mani",
+    "address": "HB Coloney, Vizag",
+    "mobile": "+91 9874773214",
+    "postal_code": "1234564",
+    "email": "mani.kitchen.appliances@vendors.com",
+    "website": "mani-kitchen-appliances.vendors.com"
+  },
+  {
+    "name": "Mani Fashion Wear",
+    "contact_name": "Mani",
+    "address": "HB Coloney, Vizag",
+    "mobile": "+91 9874773215",
+    "postal_code": "1234565",
+    "email": "mani.fashion.wear@vendors.com",
+    "website": "mani-fashion-wear.vendors.com"
+  },
+  {
+    "name": "Mani Mobiles",
+    "contact_name": "Mani",
+    "address": "HB Coloney, Vizag",
+    "mobile": "+91 9874773216",
+    "postal_code": "1234566",
+    "email": "mani.mobiles@vendors.com",
+    "website": "mani-mobiles.vendors.com"
+  },
+  {
+    "name": "Mani Automobiles",
+    "contact_name": "Mani",
+    "address": "HB Coloney, Vizag",
+    "mobile": "+91 9874773217",
+    "postal_code": "1234567",
+    "email": "mani.automobiles@vendors.com",
+    "website": "mani-automobiles.vendors.com"
+  },
+  {
+    "name": "Mani Jewelry",
+    "contact_name": "Mani",
+    "address": "HB Coloney, Vizag",
+    "mobile": "+91 9874773218",
+    "postal_code": "1234568",
+    "email": "mani.jewelry@vendors.com",
+    "website": "mani-jewelry.vendors.com"
+  },
+  {
+    "name": "Chandra Wood Works",
+    "contact_name": "Chandra",
+    "address": "HB Coloney, Vizag",
+    "mobile": "+91 9874773220",
+    "postal_code": "1234570",
+    "email": "chandra.wood.works@vendors.com",
+    "website": "chandra-wood-works.vendors.com"
+  },
+  {
+    "name": "Chandra Groceries",
+    "contact_name": "Chandra",
+    "address": "HB Coloney, Vizag",
+    "mobile": "+91 9874773221",
+    "postal_code": "1234571",
+    "email": "chandra.groceries@vendors.com",
+    "website": "chandra-groceries.vendors.com"
+  },
+  {
+    "name": "Chandra Kitchen Appliances",
+    "contact_name": "Chandra",
+    "address": "HB Coloney, Vizag",
+    "mobile": "+91 9874773222",
+    "postal_code": "1234572",
+    "email": "chandra.kitchen.appliances@vendors.com",
+    "website": "chandra-kitchen-appliances.vendors.com"
+  },
+  {
+    "name": "Chandra Fashion Wear",
+    "contact_name": "Chandra",
+    "address": "HB Coloney, Vizag",
+    "mobile": "+91 9874773223",
+    "postal_code": "1234573",
+    "email": "chandra.fashion.wear@vendors.com",
+    "website": "chandra-fashion-wear.vendors.com"
+  },
+  {
+    "name": "Chandra Mobiles",
+    "contact_name": "Chandra",
+    "address": "HB Coloney, Vizag",
+    "mobile": "+91 9874773224",
+    "postal_code": "1234574",
+    "email": "chandra.mobiles@vendors.com",
+    "website": "chandra-mobiles.vendors.com"
+  },
+  {
+    "name": "Chandra Automobiles",
+    "contact_name": "Chandra",
+    "address": "HB Coloney, Vizag",
+    "mobile": "+91 9874773225",
+    "postal_code": "1234575",
+    "email": "chandra.automobiles@vendors.com",
+    "website": "chandra-automobiles.vendors.com"
+  },
+  {
+    "name": "Chandra Jewelry",
+    "contact_name": "Chandra",
+    "address": "HB Coloney, Vizag",
+    "mobile": "+91 9874773226",
+    "postal_code": "1234576",
+    "email": "chandra.jewelry@vendors.com",
+    "website": "chandra-jewelry.vendors.com"
+  },
+  {
+    "name": "Jaswanth Wood Works",
+    "contact_name": "Jaswanth",
+    "address": "HB Coloney, Vizag",
+    "mobile": "+91 9874773228",
+    "postal_code": "1234578",
+    "email": "jaswanth.wood.works@vendors.com",
+    "website": "jaswanth-wood-works.vendors.com"
+  },
+  {
+    "name": "Jaswanth Groceries",
+    "contact_name": "Jaswanth",
+    "address": "HB Coloney, Vizag",
+    "mobile": "+91 9874773229",
+    "postal_code": "1234579",
+    "email": "jaswanth.groceries@vendors.com",
+    "website": "jaswanth-groceries.vendors.com"
+  },
+  {
+    "name": "Jaswanth Kitchen Appliances",
+    "contact_name": "Jaswanth",
+    "address": "HB Coloney, Vizag",
+    "mobile": "+91 9874773230",
+    "postal_code": "1234580",
+    "email": "jaswanth.kitchen.appliances@vendors.com",
+    "website": "jaswanth-kitchen-appliances.vendors.com"
+  },
+  {
+    "name": "Jaswanth Fashion Wear",
+    "contact_name": "Jaswanth",
+    "address": "HB Coloney, Vizag",
+    "mobile": "+91 9874773231",
+    "postal_code": "1234581",
+    "email": "jaswanth.fashion.wear@vendors.com",
+    "website": "jaswanth-fashion-wear.vendors.com"
+  },
+  {
+    "name": "Jaswanth Mobiles",
+    "contact_name": "Jaswanth",
+    "address": "HB Coloney, Vizag",
+    "mobile": "+91 9874773232",
+    "postal_code": "1234582",
+    "email": "jaswanth.mobiles@vendors.com",
+    "website": "jaswanth-mobiles.vendors.com"
+  },
+  {
+    "name": "Mani Hardware Solutions",
+    "contact_name": "Mani Varma",
+    "address": "HB Coloney, Vizag",
+    "mobile": "+91 9874563210",
+    "postal_code": "1234560",
+    "email": "mani.hardware@vendors.com",
+    "website": "manihardware.com"
+  },
+  {
+    "name": "Chandra Shekar Computers",
+    "contact_name": "Chandra Shekar",
+    "address": "Ram Nagar, Vizag",
+    "mobile": "+91 9874563211",
+    "postal_code": "1234570",
+    "email": "chandra.computers@vendors.com",
+    "website": "chandra.computers.com"
+  },
+  {
+    "name": "Jaswanth Hardware & Service",
+    "contact_name": "Jaswanth",
+    "address": "HB Colony, Vizag",
+    "mobile": "+91 9874663210",
+    "postal_code": "1235580",
+    "email": "jaswanth@vendors.com",
+    "website": "jaswnath-solutions.com"
+  },
+  {
+    "name": "Tech Market",
+    "contact_name": "Ravi",
+    "address": "vizag",
+    "mobile": "+91 9874503211",
+    "postal_code": "1334580",
+    "email": "tech.market@gmail.com",
+    "website": "tech-market.vendors.com"
+  },
+  {
+    "name": "Mani Fancy & beauty products",
+    "contact_name": "Mani",
+    "address": "HB Coloney, Vizag",
+    "mobile": "+91 9874773211",
+    "postal_code": "1234561",
+    "email": "mani.fancy.beauty.products@vendors.com",
+    "website": "mani-fancy-beauty-products.vendors.com"
+  },
+  {
+    "name": "Chandra Fancy & beauty products",
+    "contact_name": "Chandra",
+    "address": "HB Coloney, Vizag",
+    "mobile": "+91 9874773219",
+    "postal_code": "1234569",
+    "email": "chandra.fancy.beauty.products@vendors.com",
+    "website": "chandra-fancy-beauty-products.vendors.com"
+  },
+  {
+    "name": "Jaswanth Fancy & beauty products",
+    "contact_name": "Jaswanth",
+    "address": "HB Coloney, Vizag",
+    "mobile": "+91 9874773227",
+    "postal_code": "1234577",
+    "email": "jaswanth.fancy.beauty.products@vendors.com",
+    "website": "jaswanth-fancy-beauty-products.vendors.com"
+  }
+]
