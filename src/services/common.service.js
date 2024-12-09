@@ -84,7 +84,7 @@ const createProductCategory = async () => {
 }
 
 const createVendor = async () => {
-    const vendorFilePath = "src/data-files/vendor.json";
+    const vendorFilePath = "src/data-files/vendors.json";
     const vendorBody = JSON.parse(await fs.readFileSync(vendorFilePath, "utf-8"));
     const vendorData = await vendorService.insertVendor(vendorBody);
     const vendorCreatedIds = vendorData.identifiers;
