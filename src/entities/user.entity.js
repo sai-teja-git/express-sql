@@ -27,6 +27,14 @@ const user = new EntitySchema({
             type: "varchar",
             length: 100,
         },
+        is_active: {
+            type: "boolean",
+            default: true
+        },
+        password_updated_at: {
+            type: "timestamp",
+            default: () => "CURRENT_TIMESTAMP",
+        },
         last_login: {
             type: "timestamp",
             nullable: true,

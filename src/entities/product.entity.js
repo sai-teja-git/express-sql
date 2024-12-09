@@ -20,6 +20,10 @@ const product = new EntitySchema({
         price: {
             type: "int"
         },
+        is_active: {
+            type: "boolean",
+            default: true
+        },
         created_at: {
             type: "timestamp",
             default: () => "CURRENT_TIMESTAMP",

@@ -1,31 +1,31 @@
 [
   {
     "name": "Test User",
-    "user_name": "test_user",
+    "username": "test_user",
     "email": "test.user@mail.com",
     "password": "Test@123"
   },
   {
     "name": "Mani",
-    "user_name": "mani",
+    "username": "mani",
     "email": "mani@mail.com",
     "password": "Test@123"
   },
   {
     "name": "Sai Teja",
-    "user_name": "sai_teja",
+    "username": "sai_teja",
     "email": "saiteja@mail.com",
     "password": "Test@123"
   },
   {
     "name": "Mouli",
-    "user_name": "mouli",
+    "username": "mouli",
     "email": "mouli@gmail.com",
     "password": "Test@123"
   },
   {
     "name": "Ravi",
-    "user_name": "ravi",
+    "username": "ravi",
     "email": "ravi@gmail.com",
     "password": "Test@123"
   }

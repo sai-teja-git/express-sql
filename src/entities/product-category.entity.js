@@ -14,6 +14,10 @@ const productCategory = new EntitySchema({
             length: 50,
             unique: true,
         },
+        is_active: {
+            type: "boolean",
+            default: true
+        },
         created_at: {
             type: "timestamp",
             default: () => "CURRENT_TIMESTAMP",

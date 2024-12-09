@@ -8,23 +8,23 @@ class HttpError extends Error {
 }
 
 class UnauthorizedError extends Error {
-    constructor(message) {
+    constructor(message, status = HttpCodes.UNAUTHORIZED) {
         super(message);
-        this.status = HttpCodes.UNAUTHORIZED;
+        this.status = status;
     }
 }
 
 class ForbiddenError extends Error {
-    constructor(message) {
+    constructor(message, status = HttpCodes.FORBIDDEN) {
         super(message);
-        this.status = HttpCodes.FORBIDDEN;
+        this.status = status;
     }
 }
 
 class NotFoundError extends Error {
-    constructor(message) {
+    constructor(message, status = HttpCodes.NOT_FOUND) {
         super(message);
-        this.status = HttpCodes.NOT_FOUND;
+        this.status = status;
     }
 }
 
