@@ -2,6 +2,7 @@ const dataSource = require("../config/data-source");
 const HttpCodes = require("../constants/http-codes");
 
 const productCategoryEntity = require("../entities/product-category.entity");
+const productCategory = dataSource.getRepository(productCategoryEntity)
 
 const addProductCategory = async (req, res) => {
     try {
@@ -20,13 +21,11 @@ const addProductCategory = async (req, res) => {
 }
 
 const insertProductCategory = async (body) => {
-    const productCategory = dataSource.getRepository(productCategoryEntity)
     return await productCategory.insert(body)
 }
 
 const getProductCategory = async (_, res) => {
     try {
-        const productCategory = dataSource.getRepository(productCategoryEntity)
         const data = await productCategory.find({ is_active: true })
         res.send({
             status: HttpCodes.OK,
@@ -43,7 +42,6 @@ const getProductCategory = async (_, res) => {
 
 const updateProductCategory = async (req, res) => {
     try {
-        const productCategory = dataSource.getRepository(productCategoryEntity)
         const productCategoryId = req.params.id
         const body = req.body
         if ("id" in body) {

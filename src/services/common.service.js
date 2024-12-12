@@ -27,7 +27,7 @@ const addDefaultData = async (_, res) => {
             delete product.vendor_name
             product.brand_id = brandIds[product.brand_name] ?? null;
             delete product.brand_name
-            product.category_name = productCategoryIds[product.category_name] ?? null;
+            product.category_id = productCategoryIds[product.category_name] ?? null;
             delete product.category_name
         }
 
@@ -39,7 +39,6 @@ const addDefaultData = async (_, res) => {
             message: "Data Inserted"
         })
     } catch (e) {
-        console.log(e)
         res.status(e.status ?? HttpCodes.INTERNAL_SERVER_ERROR).json({
             message: e.message ?? 'Failed Insert Data',
             status: e.status ?? HttpCodes.INTERNAL_SERVER_ERROR

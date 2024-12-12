@@ -2,6 +2,7 @@ const dataSource = require("../config/data-source");
 const HttpCodes = require("../constants/http-codes");
 
 const vendorEntity = require("../entities/vendor.entity");
+const vendor = dataSource.getRepository(vendorEntity);
 
 const addVendor = async (req, res) => {
     try {
@@ -20,13 +21,11 @@ const addVendor = async (req, res) => {
 }
 
 const insertVendor = async (body) => {
-    const vendor = dataSource.getRepository(vendorEntity)
     return await vendor.insert(body)
 }
 
 const getVendor = async (_, res) => {
     try {
-        const vendor = dataSource.getRepository(vendorEntity)
         const data = await vendor.find({ is_active: true })
         res.send({
             status: HttpCodes.OK,
@@ -43,7 +42,6 @@ const getVendor = async (_, res) => {
 
 const updateVendor = async (req, res) => {
     try {
-        const vendor = dataSource.getRepository(vendorEntity)
         const vendorId = req.params.id
         const body = req.body
         if ("id" in body) {

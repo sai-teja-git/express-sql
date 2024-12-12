@@ -35,7 +35,7 @@ const product = new EntitySchema({
         },
     },
     relations: {
-        brand: {
+        brand_id: {
             type: "many-to-one",
             target: "Brand",
             joinColumn: {
@@ -43,7 +43,7 @@ const product = new EntitySchema({
             },
             onDelete: "SET NULL"
         },
-        product_category: {
+        category_id: {
             type: "many-to-one",
             target: "ProductCategory",
             joinColumn: {
@@ -51,7 +51,7 @@ const product = new EntitySchema({
             },
             onDelete: "SET NULL"
         },
-        vendor: {
+        vendor_id: {
             type: "many-to-one",
             target: "Vendor",
             joinColumn: {

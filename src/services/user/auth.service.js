@@ -1,15 +1,16 @@
 const HttpCodes = require("../../constants/http-codes");
-const user = require("../../entities/user.entity");
 const dataSource = require("../../config/data-source");
 const { UnauthorizedError } = require("../../errors/http.errors");
 const moment = require("moment-timezone");
 const bcrypt = require('bcrypt');
 
+const userEntity = require("../../entities/user.entity");
+const user = dataSource.getRepository(userEntity)
+
 const login = async (req, res) => {
     try {
         const body = req.body
-        const userRepo = dataSource.getRepository(user)
-        const userData = await userRepo.findOne({ where: { username: body.username } });
+        const userData = await user.findOne({ where: { username: body.username } });
         const passwordMatch = await bcrypt.compare(body.password, userData.password)
         if (!passwordMatch) {
             throw new UnauthorizedError("Invalid Credentials")
@@ -19,7 +20,7 @@ const login = async (req, res) => {
             email: userData.email,
             last_login: userData.last_login
         }
-        await userRepo.update(userData.id, {
+        await user.update(userData.id, {
             last_login: moment.utc()
         })
         res.send({

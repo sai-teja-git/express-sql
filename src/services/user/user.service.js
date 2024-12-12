@@ -6,6 +6,7 @@ const GLOBAL_CONST = require("../../constants/global.const");
 const { UnauthorizedError } = require("../../errors/http.errors");
 
 const userEntity = require("../../entities/user.entity");
+const user = dataSource.getRepository(userEntity);
 
 const addUsers = async (req, res) => {
     try {
@@ -23,8 +24,6 @@ const addUsers = async (req, res) => {
 }
 
 const insertUsers = async (body) => {
-    const userRepo = dataSource.getRepository(userEntity)
-
     const hash = async (password) => {
         const salt = await bcrypt.genSalt(GLOBAL_CONST.PASSWORD_SALT_ROUND);
         return await bcrypt.hash(password, salt)
@@ -36,13 +35,12 @@ const insertUsers = async (body) => {
     } else {
         body.password = await hash(body.password)
     }
-    return await userRepo.insert(body)
+    return await user.insert(body)
 }
 
 const getUsers = async (_, res) => {
     try {
-        const userRepo = dataSource.getRepository(userEntity)
-        const data = await userRepo.find({ is_active: true })
+        const data = await user.find({ is_active: true })
         res.send({
             status: HttpCodes.OK,
             data,
@@ -59,15 +57,14 @@ const getUsers = async (_, res) => {
 const updatePassword = async (req, res) => {
     try {
         const body = req.body;
-        const userRepo = dataSource.getRepository(userEntity)
-        const userData = await userRepo.findOne({ where: { username: body.username } });
+        const userData = await user.findOne({ where: { username: body.username } });
         const passwordMatch = await bcrypt.compare(body.old, userData.password)
         if (!passwordMatch) {
             throw new UnauthorizedError("Invalid Credentials")
         }
         const salt = await bcrypt.genSalt(GLOBAL_CONST.PASSWORD_SALT_ROUND);
         const password = await bcrypt.hash(body.new, salt)
-        await userRepo.update(userData.id, {
+        await user.update(userData.id, {
             password,
             password_updated_at: moment.utc(),
         })

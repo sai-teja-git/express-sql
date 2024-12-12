@@ -2,6 +2,7 @@ const dataSource = require("../config/data-source");
 const HttpCodes = require("../constants/http-codes");
 
 const brandEntity = require("../entities/brand.entity");
+const brand = dataSource.getRepository(brandEntity)
 
 const addBrand = async (req, res) => {
     try {
@@ -19,13 +20,11 @@ const addBrand = async (req, res) => {
 }
 
 const insertBrand = async (body) => {
-    const brand = dataSource.getRepository(brandEntity)
     return await brand.insert(body)
 }
 
 const getBrand = async (_, res) => {
     try {
-        const brand = dataSource.getRepository(brandEntity)
         const data = await brand.find({ is_active: true })
         res.send({
             status: HttpCodes.OK,
@@ -42,7 +41,6 @@ const getBrand = async (_, res) => {
 
 const updateBrand = async (req, res) => {
     try {
-        const brand = dataSource.getRepository(brandEntity)
         const brandId = req.params.id
         console.log('brandId', brandId)
         const body = req.body
