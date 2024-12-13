@@ -32,7 +32,6 @@ const insertProduct = async (body) => {
         body.brand_id = { id: body.brand_id };
         body.category_id = { id: body.category_id };
     }
-    console.log('body', body)
     return await product.insert(body)
 }
 

@@ -2,7 +2,7 @@ const { EntitySchema } = require('typeorm');
 
 const vendor = new EntitySchema({
     name: "Vendor",
-    tableName: "vendors",
+    tableName: "vendor",
     columns: {
         id: {
             type: "int",

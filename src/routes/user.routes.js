@@ -16,15 +16,6 @@ userRouter.post('/', (req, res) => {
     return userService.addUsers(req, res)
 });
 
-userRouter.get('/query', (req, res) => {
-    console.log('req.query', req.query)
-    res.send({
-        status: 200,
-        message: "User Here!",
-        ...req.query
-    })
-});
-
 userRouter.get('/', (req, res) => {
     return userService.getUsers(req, res)
 });

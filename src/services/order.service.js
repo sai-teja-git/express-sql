@@ -54,7 +54,6 @@ const startCron = async (_, res) => {
             message: "Cron Started"
         })
     } catch (e) {
-        console.log('e', e)
         res.status(e.status ?? HttpCodes.INTERNAL_SERVER_ERROR).json({
             message: e.message ?? 'Failed Fetch Product Category',
             status: e.status ?? HttpCodes.INTERNAL_SERVER_ERROR

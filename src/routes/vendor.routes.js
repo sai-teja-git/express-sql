@@ -8,6 +8,10 @@ vendorRouter.post("/", (req, res) => {
     return vendorService.addVendor(req, res)
 });
 
+vendorRouter.get("/rating", (req, res) => {
+    return vendorService.getVendorRatings(req, res)
+});
+
 vendorRouter.get("/", (req, res) => {
     return vendorService.getVendor(req, res)
 });
