@@ -90,7 +90,7 @@ const getVendorRatings = async (_, res) => {
             .groupBy(["vendor.id", "vendor.name"])
             .orderBy("rating", "DESC")
             .where("order.status='delivered' OR order.status='replaced'")
-            .getRawMany(); x
+            .getRawMany();
         res.send({
             status: HttpCodes.OK,
             data,

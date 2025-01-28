@@ -9,12 +9,14 @@ const productEntity = require("../entities/product.entity");
 const product = dataSource.getRepository(productEntity);
 
 const orderEntity = require("../entities/order.entity");
+const { HttpError } = require("../errors/http.errors");
 const order = dataSource.getRepository(orderEntity);
 
 let orderCron;
 let detailsForOrder = {};
 let insertIndex = 1;
 let totalInsertions = 0;
+let isCronInProgress = false;
 
 const randomIntNumber = (min, max) => {
     min = Math.ceil(min);
@@ -24,6 +26,9 @@ const randomIntNumber = (min, max) => {
 
 const startCron = async (_, res) => {
     try {
+        if (isCronInProgress) {
+            throw new HttpError("The previous cron job is still in progress. Please wait for it to complete before starting a new one.", 500)
+        }
         detailsForOrder = {};
         insertIndex = 1;
         totalInsertions = 0;
@@ -49,6 +54,7 @@ const startCron = async (_, res) => {
         orderCron = setInterval(() => {
             createOrder()
         }, (10 * 1000))
+        isCronInProgress = true;
         res.send({
             status: HttpCodes.OK,
             message: "Cron Started"
@@ -65,6 +71,7 @@ const stopCron = async (_, res) => {
     try {
         clearInterval(orderCron)
         console.log("Cron Stopped......")
+        isCronInProgress = false;
         res.send({
             status: HttpCodes.OK,
             message: "Cron Stopped"
