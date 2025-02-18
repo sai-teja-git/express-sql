@@ -11,4 +11,8 @@ orderRouter.delete("/cron", (req, res) => {
     return orderService.stopCron(req, res)
 })
 
+orderRouter.get("/:status", (req, res) => {
+    return orderService.getStateOrders(req, res)
+})
+
 module.exports = orderRouter; 

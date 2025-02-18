@@ -1,7 +1,7 @@
 {
   "name": "express-sql",
   "version": "1.0.0",
-  "description": "Node project with express framework and sql database",
+  "description": "Node project with express framework and sql postgres database",
   "main": "app.js",
   "scripts": {
     "test": "npm test",

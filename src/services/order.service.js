@@ -134,7 +134,39 @@ const createOrder = async () => {
     }
 }
 
+const getStateOrders = async (req, res) => {
+    try {
+        const status = req.params.status
+        const data = await order
+            .createQueryBuilder("order")
+            .leftJoin("order.product_id", "product")
+            .leftJoin("product.category_id", "pc")
+            .select([
+                "product.id AS id",
+                "product.name AS product",
+                "order.rating AS rating",
+                "pc.name AS product_category",
+            ])
+            .groupBy(["product.id", "product.name", "rating", "product_category"])
+            .orderBy("rating", "DESC")
+            .where(`order.status = '${status}'`)
+            .getRawMany();
+        res.send({
+            status: HttpCodes.OK,
+            data,
+            count: data.length,
+            message: "Fetched Successfully."
+        })
+    } catch (e) {
+        res.status(e.status ?? HttpCodes.INTERNAL_SERVER_ERROR).json({
+            message: e.message ?? 'Failed to fetch',
+            status: e.status ?? HttpCodes.INTERNAL_SERVER_ERROR
+        });
+    }
+}
+
 module.exports = {
     startCron,
     stopCron,
+    getStateOrders
 }

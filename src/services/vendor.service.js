@@ -5,7 +5,10 @@ const vendorEntity = require("../entities/vendor.entity");
 const vendor = dataSource.getRepository(vendorEntity);
 
 const orderEntity = require("../entities/order.entity");
-const order = dataSource.getRepository(orderEntity)
+const order = dataSource.getRepository(orderEntity);
+
+const productEntity = require("../entities/product.entity");
+const product = dataSource.getRepository(productEntity);
 
 const addVendor = async (req, res) => {
     try {
@@ -104,10 +107,44 @@ const getVendorRatings = async (_, res) => {
     }
 }
 
+const getVendorProducts=async (_,res)=>{
+    try {
+        const productData = await product
+            .createQueryBuilder("product")
+            .leftJoin("product.vendor_id","vendor")
+            .select([
+                "vendor.id AS id",
+                "vendor.name AS name",
+                `json_agg(
+                  json_build_object(
+                    'id', product.id,
+                    'name', product.name,
+                    'price', product.price,
+                    'description', product.description,
+                    'created_at', product.created_at
+                  )
+                ) AS products`
+              ])
+            .groupBy(["vendor.id","vendor.name"])
+            .getRawMany()
+        res.send({
+            status: HttpCodes.OK,
+            data:productData,
+            message: "Fetched Successfully."
+        })
+    } catch (e) {
+        res.status(e.status ?? HttpCodes.INTERNAL_SERVER_ERROR).json({
+            message: e.message ?? 'Failed to fetch',
+            status: e.status ?? HttpCodes.INTERNAL_SERVER_ERROR
+        });
+    }
+}
+
 module.exports = {
     addVendor,
     getVendor,
     updateVendor,
     insertVendor,
-    getVendorRatings
+    getVendorRatings,
+    getVendorProducts
 }
